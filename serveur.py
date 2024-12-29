@@ -11,13 +11,13 @@ print("bienvenue dans le chat!")
 
 while  client_connectee: 
     liste_lu, liste_acce_Ecrit, Exeption = select.select(socket_objs, [], socket_objs) 
-    for socket.obj in liste_lu: 
-        if socket_objs is serveur: 
+    for socket_obj in liste_lu: 
+        if socket_obj is serveur: 
             client, adresse = serveur.accept() 
             socket_objs.append(client) 
 
         else:  
-            donnée_reçu = socket_obj.recv(128).decoder("utf-8") 
+            donnée_reçu = socket_obj.recv(128).decode("utf-8") 
 
             if donnée_reçu: 
                 print(donnée_reçu)  
